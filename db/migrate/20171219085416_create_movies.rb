@@ -14,7 +14,7 @@ class CreateMovies < ActiveRecord::Migration[5.1]
     end
     create_table :rewiewer do |t|
       t.string :name
-      t.float :rating
+      t.integer :rating
       t.text :comment
 
       t.timestamps
