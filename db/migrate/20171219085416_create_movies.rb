@@ -12,12 +12,5 @@ class CreateMovies < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    create_table :rewiewer do |t|
-      t.string :name
-      t.integer :rating
-      t.text :comment
-
-      t.timestamps
-    end
   end
 end
