@@ -1,1 +1,12 @@
 <h2>Filmy</h2>
+<h3>
+   <%= link_to 'Dodaj nowy film', new_movie_path%>
+</h3>
+<% @movies.each do |movie| %>
+  <h4>
+    <%= link_to "Film #{movie.title}, Gatunek #{movie.kind}", movie_path(movie) %>
+    <%= link_to 'Pokaż', movie_path(movie) %>
+    <%= link_to 'Zmień', edit_movie_path(movie) %>
+    <%= link_to 'Usuń', movie_path(movie), method: :delete %>
+  </h4>
+<% end %>

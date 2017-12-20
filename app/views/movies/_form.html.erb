@@ -1,0 +1,49 @@
+<%= form_for @movie do |f| %>
+  <div class="form-group">
+    <%= f.label :Film %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :Reżyser %>
+    <%= f.text_field :director, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :Gatunek %>
+    <%= f.text_field :kind, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :Opis %>
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :'Czas trwania' %>
+    <%= f.number_field :length, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :'Kraj produkcji' %>
+    <%= f.text_field :country, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :'Data premiery' %>
+    <%= f.date_field :relese_date, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :Scenarzysta %>
+    <%= f.text_field :scenarist, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit 'Zapisz', class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<div class="form-group">
+  <%= link_to 'Powrót', movies_path, class: "btn btn-primary" %>
+</div>

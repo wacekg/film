@@ -1,4 +1,5 @@
 class MoviesController < ApplicationController
+  before_action :set_movie, except: [:index, :new, :create]
   def index
     @movies = Movie.all.order(relese_date: :desc)
   end
@@ -6,12 +7,12 @@ class MoviesController < ApplicationController
     @movie = Movie.new
   end
   def create
-    @movie = Movie.create()
+    @movie = Movie.create(movie_params)
   end
   def edit
   end
   def update
-    @movie.update_attributes()
+    @movie.update_attributes(movie_params)
   end
   def show
   end
@@ -21,4 +22,10 @@ class MoviesController < ApplicationController
   end
 
   private
+  def movie_params
+    params.require(:movie).permit(:title, :director, :kind, :content, :length, :country, :relese_date, :scenarist)
+  end
+  def set_movie
+    @movie = Movie.find(params[:id])
+  end
 end
