@@ -1,0 +1,35 @@
+<h1>Informacje o filmie</h1>
+  <p>
+    <strong>Film: </strong>
+    <%= "#{@movie.title}" %>
+  </p>
+  <p>
+    <strong>Reżyser: </strong>
+    <%= "#{@movie.director}" %>
+  </p>
+  <p>
+    <strong>Gatunek: </strong>
+    <%= "#{@movie.kind}" %>
+  </p>
+  <p>
+    <strong>Opis: </strong>
+    <%= "#{@movie.content}" %>
+  </p>
+  <p>
+    <strong>Czas trwania: </strong>
+    <%= "#{@movie.length}" %>
+  </p>
+    <strong>Kraj produkcji: </strong>
+    <%= "#{@movie.country}" %>
+  </p>
+  </p>
+    <strong>Data premiery: </strong>
+    <%= "#{@movie.relese_date}" %>
+  </p>
+  </p>
+    <strong>Scenarzysta: </strong>
+    <%= "#{@movie.scenarist}" %>
+  </p>
+  <h3>
+   <%= link_to 'Wróć', movies_path %>
+  </h3>
