@@ -1,7 +1,9 @@
 class MoviesController < ApplicationController
   before_action :set_movie, except: [:index, :new, :create]
   def index
+    # binding.pry
     @movies = Movie.all.order(relese_date: :desc)
+    # @movies = @movies.where("? = any(title)", params[:q]) if params[:q].present?
   end
   def new
     @movie = Movie.new
