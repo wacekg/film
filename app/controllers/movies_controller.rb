@@ -18,8 +18,8 @@ class MoviesController < ApplicationController
   end
   def show
   end
-  def destory
-    @movie.destory
+  def destroy
+    @movie.destroy
     redirect_to action: "index"
   end
 
