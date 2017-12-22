@@ -5,6 +5,7 @@ class AddRatings < ActiveRecord::Migration[5.1]
       t.integer :rating
 
       t.references :movie, foreign_key: true
+      t.references :user, foreign_key: true
     end
   end
 end

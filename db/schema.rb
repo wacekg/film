@@ -29,7 +29,9 @@ ActiveRecord::Schema.define(version: 20171222075821) do
     t.text "comment"
     t.integer "rating"
     t.integer "movie_id"
+    t.integer "user_id"
     t.index ["movie_id"], name: "index_ratings_on_movie_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
