@@ -1,1 +1,12 @@
+<p>
 <strong>Ocena filmu</strong>
+  <%= rating.ratings %>
+</p>
+<p>
+  <strong>Comment: </strong>
+  <%= comment.ratings %>
+</p>
+
+| <%= link_to 'Destroy', movie_rating_path(@movie, comment),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
