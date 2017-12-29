@@ -17,6 +17,7 @@ class MoviesController < ApplicationController
     @movie.update_attributes(movie_params)
   end
   def show
+    @rating = Rating.new(rating: session[:rating])
   end
   def destroy
     @movie.destroy
