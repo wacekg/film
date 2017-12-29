@@ -14,7 +14,11 @@
 </h3>
 <% @movies.each do |movie| %>
   <div class="list-group-item-text">
-    <%= link_to "Film #{movie.title}, Gatunek #{movie.kind}", movie_path(movie) %>
+    <h4>
+      <%= "Film: #{movie.title}, Gatunek: #{movie.kind}" %>
+    </h4>
+  </div>
+  <div class="list-group-item-text">
     <%= link_to 'Pokaż', movie_path(movie), class: "btn btn-xs btn-primary" %>
     <%= link_to 'Zmień', edit_movie_path(movie), class: "btn btn-xs btn-primary" %>
     <%= link_to 'Usuń', movie_path(movie),
