@@ -1,12 +1,13 @@
 <p>
 <strong>Ocena filmu</strong>
-  <%= rating.ratings %>
+  <%= rating.rating %>
 </p>
 <p>
-  <strong>Comment: </strong>
-  <%= comment.ratings %>
+  <strong>Komentarz: </strong>
+  <%= rating.comment %>
 </p>
-
-| <%= link_to 'Destroy', movie_rating_path(@movie, comment),
+<div class="form-group">
+  <%= link_to 'Usuń ocenę', movie_rating_path(@movie, rating),
         method: :delete,
-        data: { confirm: 'Are you sure?' } %>
+        data: { confirm: 'Jesteś pewny?' }, class: "btn btn-primary" %>
+</div>

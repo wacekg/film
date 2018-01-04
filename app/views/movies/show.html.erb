@@ -30,16 +30,12 @@
     <strong>Scenarzysta: </strong>
     <%= "#{@movie.scenarist}" %>
   </p>
-</p>
-  <strong>Ocena: </strong>
-  <%= "#{@rating.rating}" %>
-</p>
 
   <% @movie.ratings.each do |rating| %>
-    <%= render 'ratings/rating', comment: comment %>
+    <%= render 'ratings/rating', rating: rating %>
   <% end %>
   <%= render 'ratings/form' %>
 
-  <h3>
-   <%= link_to 'Wróć', movies_path %>
-  </h3>
+  <div class="form-group">
+    <%= link_to 'Wróć', movies_path, class: "btn btn-primary" %>
+  </div>
