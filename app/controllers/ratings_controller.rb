@@ -1,10 +1,11 @@
 class RatingsController < ApplicationController
   def create
     @movie = Movie.find(params[:movie_id])
+    authorize @rating
     @movie.ratings.create(rating_params.merge({ user_id: current_user.id }))
-    # binding.pry
   end
   def destroy
+    authorize @rating
     @rating = Rating.find(params[:id])
     @rating.destroy
   end

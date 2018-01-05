@@ -9,17 +9,20 @@ class MoviesController < ApplicationController
     @movie = Movie.new
   end
   def create
+    authorize @movie
     @movie = Movie.create(movie_params)
   end
   def edit
   end
   def update
+    authorize @movie
     @movie.update_attributes(movie_params)
   end
   def show
     @rating = Rating.new(rating: session[:rating])
   end
   def destroy
+    authorize @movie
     @movie.destroy
     redirect_to action: "index"
   end
@@ -31,4 +34,9 @@ class MoviesController < ApplicationController
   def set_movie
     @movie = Movie.find(params[:id])
   end
+  def authoriza_movie
+  if @movie.author != current_user
+    rededict_to article_path, alert: "Nie masz uprawnień"
+  end
+end
 end
