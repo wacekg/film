@@ -1,4 +1,4 @@
-class RatingsPolicy < ApplicationPolicy
+class RatingPolicy < ApplicationPolicy
   attr_reader :user, :rating
 
   def initialize(user, rating)

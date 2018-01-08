@@ -1,4 +1,5 @@
 class RatingsController < ApplicationController
+  before_action :set_rating
   def create
     @movie = Movie.find(params[:movie_id])
     authorize @rating
@@ -13,5 +14,8 @@ class RatingsController < ApplicationController
   private
   def rating_params
     params.require(:rating).permit(:rating, :comment)
+  end
+  def set_rating
+    @rating = Rating.first
   end
 end

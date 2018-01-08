@@ -1,7 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, except: [:index, :new, :create]
   def index
-    # binding.pry
     @movies = Movie.all.order(relese_date: :desc)
     @movies = @movies.where("title like ?", params[:q]) if params[:q].present?
   end
@@ -9,14 +8,16 @@ class MoviesController < ApplicationController
     @movie = Movie.new
   end
   def create
-    authorize @movie
     @movie = Movie.create(movie_params)
+    authorize @movie
+    render 'movies/show'
   end
   def edit
   end
   def update
     authorize @movie
     @movie.update_attributes(movie_params)
+    render 'movies/edit'
   end
   def show
     @rating = Rating.new(rating: session[:rating])
